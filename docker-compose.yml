@@ -1,0 +1,14 @@
+#version: '3.7'
+services:
+  postgres:
+    image: postgres:17-alpine
+    container_name: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_DB: app
+      POSTGRES_USER: dockerhw
+      POSTGRES_PASSWORD: dockerhw
+    restart: always
